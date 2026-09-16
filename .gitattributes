@@ -1,0 +1,10 @@
+# 一律用 LF。这个仓库里的 .mjs 脚本要跨平台可跑，
+# Markdown/JSON 也要和 fangyuan.zip 内的校验和保持一致 ——
+# 一旦 git 偷偷转成 CRLF，脚本可能出问题、sha 全部对不上。
+* text=auto eol=lf
+
+# 二进制文件不做任何转换
+*.zip binary
+*.png binary
+*.jpg binary
+*.epub binary

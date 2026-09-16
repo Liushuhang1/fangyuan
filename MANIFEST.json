@@ -1,0 +1,127 @@
+{
+  "name": "fangyuan",
+  "version": "1.0.0",
+  "builtAt": "2026-09-16 16:32:36",
+  "description": "以《蛊真人》中方源的身份与处事方式回答问题的技能包。",
+  "entrypoints": {
+    "skill": "fangyuan/SKILL.md",
+    "standalone": "standalone-prompt.md",
+    "installGuide": "INSTALL.txt",
+    "humanReadme": "README.md"
+  },
+  "source": {
+    "novel": "蛊真人",
+    "chapters": 2214,
+    "words": 6320016,
+    "quotedCharacters": 1487,
+    "quotedRatio": "0.02%",
+    "note": "不包含原文全文。可逐字回溯的原文引用合计约 1,487 字，占全书 0.02%。"
+  },
+  "coverage": {
+    "行为准则": "12 条，附 27 处章号引用依据（核验全部命中）",
+    "已核实台词": "12 条块引用台词（12/12 逐字属实）",
+    "示范问答": "5 个，13 条引语（7 条可逐字回溯）",
+    "人物档案": "73 条（人物 67 + 称号/势力 6）",
+    "关键转折": "353 条，其中 301 条带可核验证据",
+    "决策测试集": "20 题（附判据，未做跨模型基线）"
+  },
+  "verification": {
+    "command": "node fangyuan/scripts/verify-bundle.mjs",
+    "quickCommand": "node fangyuan/scripts/verify-bundle.mjs --quick",
+    "needsCorpus": true,
+    "corpusEnv": [
+      "GUZHENREN_CORPUS",
+      "GUZHENREN_DATA"
+    ],
+    "withoutCorpus": "结构检查照常全过；5 个内容核验脚本标记为「跳过」，不影响使用。",
+    "corpusFormat": "每个 .txt 一章，文件名以 5 位章号开头，例如 00082-第八十四节：狠狠地踩踏！.txt"
+  },
+  "license": "原创部分 MIT；原著相关内容版权属原作者，不适用 MIT。见 LICENSE。",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 299,
+      "sha256_16": "9c8f8fa8ddee945f"
+    },
+    {
+      "path": "INSTALL.txt",
+      "bytes": 7524,
+      "sha256_16": "a2d62bae6533d3fd"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 3059,
+      "sha256_16": "d052a6871be98b79"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7291,
+      "sha256_16": "723716a72447be69"
+    },
+    {
+      "path": "fangyuan/SKILL.md",
+      "bytes": 5965,
+      "sha256_16": "b8806713ee8ea382"
+    },
+    {
+      "path": "fangyuan/references/behavior.md",
+      "bytes": 8902,
+      "sha256_16": "0bb86bef65dd8ba0"
+    },
+    {
+      "path": "fangyuan/references/cast.md",
+      "bytes": 93568,
+      "sha256_16": "a20ac3dcfb42baf3"
+    },
+    {
+      "path": "fangyuan/references/examples.md",
+      "bytes": 7085,
+      "sha256_16": "432ea6511517b97b"
+    },
+    {
+      "path": "fangyuan/references/question-set.md",
+      "bytes": 9970,
+      "sha256_16": "0eee310ccecb1931"
+    },
+    {
+      "path": "fangyuan/references/voice.md",
+      "bytes": 6359,
+      "sha256_16": "0857dadb7512ba6f"
+    },
+    {
+      "path": "fangyuan/scripts/verify-bundle.mjs",
+      "bytes": 4751,
+      "sha256_16": "0ad5665761b9ad5c"
+    },
+    {
+      "path": "fangyuan/scripts/verify-cast.mjs",
+      "bytes": 8189,
+      "sha256_16": "02348c2140744b47"
+    },
+    {
+      "path": "fangyuan/scripts/verify-examples.mjs",
+      "bytes": 4108,
+      "sha256_16": "19065dae61ba1dac"
+    },
+    {
+      "path": "fangyuan/scripts/verify-principles.mjs",
+      "bytes": 21654,
+      "sha256_16": "2c7333c726214dd9"
+    },
+    {
+      "path": "fangyuan/scripts/verify-quotes.mjs",
+      "bytes": 3771,
+      "sha256_16": "55e2f7d5198d3b00"
+    },
+    {
+      "path": "standalone-prompt.md",
+      "bytes": 25407,
+      "sha256_16": "eb752476b2ae455b"
+    },
+    {
+      "path": "tools/build-standalone.mjs",
+      "bytes": 4943,
+      "sha256_16": "54f776f4f29308f1"
+    }
+  ]
+}

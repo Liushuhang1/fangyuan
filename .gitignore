@@ -1,0 +1,13 @@
+# 原著《蛊真人》的正文不属于本仓库，也不会被提交。
+# 本仓库只含摘要、少量引用（占全书 0.02%）与统计结果，见 LICENSE。
+raw/
+build/chapter-bodies/
+*.epub
+*.txt.orig
+
+# 本机路径与临时文件
+node_modules/
+.selfcheck-tmp/
+*.log
+.DS_Store
+Thumbs.db
