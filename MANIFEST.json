@@ -1,7 +1,7 @@
 {
   "name": "fangyuan",
   "version": "1.0.0",
-  "builtAt": "2026-09-16 16:32:36",
+  "builtAt": "2026-09-16 16:50:37",
   "description": "以《蛊真人》中方源的身份与处事方式回答问题的技能包。",
   "entrypoints": {
     "skill": "fangyuan/SKILL.md",
@@ -55,8 +55,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 7291,
-      "sha256_16": "723716a72447be69"
+      "bytes": 9197,
+      "sha256_16": "8e4fefb2a5c0afc5"
     },
     {
       "path": "fangyuan/SKILL.md",
