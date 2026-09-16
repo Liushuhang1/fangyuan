@@ -12,6 +12,51 @@
 
 ## 快速开始
 
+### 方式 0：让别人的智能体从这个仓库自己装
+
+把下面这段话连同仓库地址一起发给对方：
+
+> 从这个 GitHub 仓库安装一个技能：`https://github.com/Liushuhang1/fangyuan`
+>
+> 做法：下载 `fangyuan.zip`，解压后把里面的 `fangyuan/` 整个目录放进你的技能目录
+> （Claude Code 是 `~/.claude/skills/`，DSH 是 `~/.dsh/skills/`，通用约定是 `~/.agents/skills/`）。
+> 装完确认技能列表里出现 `fangyuan`。仓库根的 `INSTALL.txt` 有完整说明。
+
+**推荐直接下 `fangyuan.zip`**（里面就是 `fangyuan/` + 单文件版 + 安装说明 + LICENSE，
+目录结构确定，不用猜路径）：
+
+```powershell
+# Windows PowerShell
+$zip = "$env:TEMP\fangyuan.zip"
+curl.exe -fL https://raw.githubusercontent.com/Liushuhang1/fangyuan/main/fangyuan.zip -o $zip
+$dst = "$env:USERPROFILE\.claude\skills"      # 换成你平台的技能根
+New-Item -ItemType Directory -Force $dst | Out-Null
+Expand-Archive -Path $zip -DestinationPath $dst -Force
+Remove-Item $zip
+```
+
+```bash
+# Linux / macOS
+tmp=$(mktemp -d)
+curl -fL https://raw.githubusercontent.com/Liushuhang1/fangyuan/main/fangyuan.zip -o "$tmp/f.zip"
+mkdir -p ~/.claude/skills                     # 换成你平台的技能根
+unzip -q -o "$tmp/f.zip" -d ~/.claude/skills
+rm -rf "$tmp"
+```
+
+装完确认 `~/.claude/skills/fangyuan/SKILL.md` 存在。
+
+**有 gh CLI 的话更省事**（一条命令克隆整个仓库）：
+
+```bash
+gh repo clone Liushuhang1/fangyuan
+# 然后把仓库里的 fangyuan/ 复制到你的技能根
+```
+
+> ⚠️ **不要用 GitHub 的「Download ZIP」源码归档**（`archive/refs/heads/main.zip`）来按固定路径解压：
+> 它的顶层目录名带 commit 短 sha（形如 `fangyuan-06f81d4`），不是固定的 `fangyuan-main`，
+> 写死路径会失败。要用就用 `-x` 通配解压，或者按上面推荐的方式下 `fangyuan.zip`。
+
 ### 环境支持技能目录
 
 把 `fangyuan/` 复制到技能根：
